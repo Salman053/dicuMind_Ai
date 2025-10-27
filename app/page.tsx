@@ -216,25 +216,19 @@ export default function LandingPage() {
             </p>
             <div className="flex justify-center gap-6">
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:salmankhanm859@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com/muhammadsalmankhan"
+                href="https://github.com/Salman053"
                 target="_blank"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Github className="w-5 h-5" />
               </a>
-              <a
-                href="https://linkedin.com/in/muhammad-salman-khan"
-                target="_blank"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
+             
             </div>
             <p className="text-xs text-muted-foreground">
               Crafted with ❤️ and Next.js + Tailwind + shadcn/ui
