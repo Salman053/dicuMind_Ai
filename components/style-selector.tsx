@@ -28,6 +28,11 @@ export function StyleSelector({ style, setStyle }: StyleSelectorProps) {
       label: "Fix the code",
       description: "Fix and refactor this code",
     },
+    {
+      id: "endpoint",
+      label: "Give all the end points",
+      description: "Give the end points of this code or model or controller",
+    },
   ];
 
   const currentStyle = styles.find((s) => s.id === style);
