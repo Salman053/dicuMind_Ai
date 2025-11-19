@@ -17,8 +17,6 @@ export default function Home() {
   const [isSuggesting, setIsSuggesting] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
-  const API_KEY = "AIzaSyBhvqjKvVbJVUB_elFh6tnzTDVHUtN_PL8";
-  const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
   // --- 1️⃣ Generate AI Documentation ---
   const generateDocumentation = async () => {
@@ -36,15 +34,15 @@ Code:
 ${code}
 `;
 
-      const response = await fetch(GEMINI_API_URL, {
+      const response = await fetch("/api/generate", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt }),
       });
 
-      const data = await response.json();
+      const data = await response?.json();
       const generatedText =
         data?.candidates?.[0]?.content?.parts?.[0]?.text ||
         "No documentation generated.";
@@ -82,12 +80,12 @@ Code:
 ${code}
 `;
 
-      const response = await fetch(GEMINI_API_URL, {
+      const response = await fetch("/api/generate", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt }),
       });
 
       const data = await response.json();
